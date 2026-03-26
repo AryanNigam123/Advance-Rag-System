@@ -8,5 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
 
+# Environment variables
 .env
+
+# User uploads (runtime data, not source code)
+data/uploads/*/
