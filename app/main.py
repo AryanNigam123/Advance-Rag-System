@@ -4,8 +4,16 @@ from pathlib import Path
 # --------------------------------------------------
 # Fix Python path
 # --------------------------------------------------
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-sys.path.append(str(PROJECT_ROOT))
+import subprocess
+import sys
+
+def main():
+    subprocess.run([
+        sys.executable, "-m", "streamlit", "run", "app/main.py"
+    ])
+
+if __name__ == "__main__":
+    main()
 
 # --------------------------------------------------
 # Imports
@@ -149,3 +157,5 @@ if st.session_state.embedded_chunks:
         st.write("### Sources")
         for pdf, page in sources:
             st.write(f"- 📄 {pdf} (Page {page})")
+            
+            print("RAG System Initialized")
